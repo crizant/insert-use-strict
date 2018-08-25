@@ -1,0 +1,70 @@
+{
+  "name": "insert-use-strict",
+  "displayName": "Insert use strict",
+  "description":
+    "Insert \"use strict\" in all JavaScript files accross your workspace.",
+  "version": "1.0.0",
+  "publisher": "CrizantLai",
+  "engines": {
+    "vscode": "^1.26.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onCommand:extension.insertUseStrict"],
+  "main": "./extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.insertUseStrict",
+        "title": "Insert Use Strict: Insert \"use strict\" in workspace"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Insert Use Strict configuration",
+      "properties": {
+        "insertUseStrict.useDoubleQuote": {
+          "type": "boolean",
+          "default": false,
+          "description":
+            "If set to true, use double quote (`\"`). Otherwise use single quote (`'`)."
+        },
+        "insertUseStrict.addTrailingSemicolon": {
+          "type": "boolean",
+          "default": false,
+          "description":
+            "If set to true, add a semicolon (`;`) at the end of the statement."
+        },
+        "insertUseStrict.autoSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "If set to true, save the documents after editing."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "precommit": "lint-staged",
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "lint-staged": {
+    "linters": {
+      "**/*.{js,json,md}": ["prettier-standard", "git add"]
+    }
+  },
+  "standard": {
+    "env": ["jest"],
+    "parser": "babel-eslint"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.1",
+    "babel-eslint": "^8.2.6",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.2",
+    "prettier-standard": "^8.0.1",
+    "standard": "^11.0.1",
+    "vscode": "^1.1.21"
+  },
+  "dependencies": {}
+}
