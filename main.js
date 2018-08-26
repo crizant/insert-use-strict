@@ -48,8 +48,7 @@ const insertUseStrict = async () => {
     await workspace.saveAll()
   }
 
-  const filesUpdated = workSpaceEdit._edits.length
-  window.showInformationMessage(`Done. ${filesUpdated} files updated.`)
+  window.showInformationMessage(`Done. ${workSpaceEdit.size} file(s) updated.`)
 }
 
 module.exports = () => {
