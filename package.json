@@ -2,20 +2,30 @@
   "name": "insert-use-strict",
   "displayName": "Insert use strict",
   "description":
-    "Insert \"use strict\" in all JavaScript files accross your workspace.",
+    "Insert \"use strict\" to all JavaScript files accross your workspace.",
   "version": "1.0.0",
   "publisher": "CrizantLai",
+  "license": "MIT",
+  "homepage": "https://github.com/crizant/insert-use-strict",
+  "bugs": {
+    "url": "https://github.com/crizant/insert-use-strict/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crizant/insert-use-strict.git"
+  },
   "engines": {
     "vscode": "^1.26.0"
   },
-  "categories": ["Other"],
+  "categories": ["Programming Languages", "Snippets"],
+  "keywords": ["Node.js", "JavaScript", "use strict", "strict mode"],
   "activationEvents": ["onCommand:extension.insertUseStrict"],
   "main": "./extension",
   "contributes": {
     "commands": [
       {
         "command": "extension.insertUseStrict",
-        "title": "Insert Use Strict: Insert \"use strict\" in workspace"
+        "title": "Insert \"use strict\" in workspace"
       }
     ],
     "configuration": {
