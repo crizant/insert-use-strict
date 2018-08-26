@@ -4,7 +4,7 @@
   "description":
     "Insert \"use strict\" to all JavaScript files accross your workspace.",
   "version": "1.0.0",
-  "publisher": "CrizantLai",
+  "publisher": "crizant",
   "license": "MIT",
   "homepage": "https://github.com/crizant/insert-use-strict",
   "bugs": {
