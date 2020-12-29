@@ -12,8 +12,8 @@ This extension is supposed to be used in Node.js projects only. For front end pr
 
 ## Features
 
-* Scan the content of file so that it won't do anything if the file already contains the `'use strict'` statement
-* Configurations (single quote or double quote, use a semicolon or not) for different coding styles
+- Scan the content of file so that it won't do anything if the file already contains the `'use strict'` statement
+- Configurations (single quote or double quote, use a semicolon or not) for different coding styles
 
 ## Usage
 
@@ -23,11 +23,15 @@ Open command palette (Mac `⇧⌘P`, Windows `Ctrl+Shift+P`), search for `Insert
 
 This extension contributes the following settings:
 
-* `insertUseStrict.useDoubleQuote`: Use single/double quote. (default: `false`)
-* `insertUseStrict.addTrailingSemicolon`: Add semicolon at the end of the statement. (default: `false`)
-* `insertUseStrict.autoSave`: Save the documents automatically after editing (default: `true`)
+- `insertUseStrict.useDoubleQuote`: Use single/double quote. (default: `false`)
+- `insertUseStrict.addTrailingSemicolon`: Add semicolon at the end of the statement. (default: `false`)
+- `insertUseStrict.autoSave`: Save the documents automatically after editing (default: `true`)
 
 ## Release Notes
+
+### 1.0.2
+
+Add logo
 
 ### 1.0.0
 

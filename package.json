@@ -1,9 +1,8 @@
 {
   "name": "insert-use-strict",
   "displayName": "Insert use strict",
-  "description":
-    "Insert \"use strict\" to all JavaScript files accross your workspace.",
-  "version": "1.0.1",
+  "description": "Insert \"use strict\" to all JavaScript files accross your workspace.",
+  "version": "1.0.2",
   "publisher": "crizant",
   "license": "MIT",
   "homepage": "https://github.com/crizant/insert-use-strict",
@@ -17,9 +16,20 @@
   "engines": {
     "vscode": "^1.26.0"
   },
-  "categories": ["Programming Languages", "Snippets"],
-  "keywords": ["Node.js", "JavaScript", "use strict", "strict mode"],
-  "activationEvents": ["onCommand:extension.insertUseStrict"],
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "icon": "images/logo.jpg",
+  "keywords": [
+    "Node.js",
+    "JavaScript",
+    "use strict",
+    "strict mode"
+  ],
+  "activationEvents": [
+    "onCommand:extension.insertUseStrict"
+  ],
   "main": "./extension",
   "contributes": {
     "commands": [
@@ -35,14 +45,12 @@
         "insertUseStrict.useDoubleQuote": {
           "type": "boolean",
           "default": false,
-          "description":
-            "If set to true, use double quote (`\"`). Otherwise use single quote (`'`)."
+          "description": "If set to true, use double quote (`\"`). Otherwise use single quote (`'`)."
         },
         "insertUseStrict.addTrailingSemicolon": {
           "type": "boolean",
           "default": false,
-          "description":
-            "If set to true, add a semicolon (`;`) at the end of the statement."
+          "description": "If set to true, add a semicolon (`;`) at the end of the statement."
         },
         "insertUseStrict.autoSave": {
           "type": "boolean",
@@ -59,11 +67,16 @@
   },
   "lint-staged": {
     "linters": {
-      "**/*.{js,json,md}": ["prettier-standard", "git add"]
+      "**/*.{js,json,md}": [
+        "prettier-standard",
+        "git add"
+      ]
     }
   },
   "standard": {
-    "env": ["jest"],
+    "env": [
+      "jest"
+    ],
     "parser": "babel-eslint"
   },
   "devDependencies": {
@@ -72,8 +85,8 @@
     "babel-eslint": "^8.2.6",
     "husky": "^0.14.3",
     "lint-staged": "^7.2.2",
-    "prettier-standard": "^8.0.1",
-    "standard": "^11.0.1",
+    "prettier-standard": "^16.4.1",
+    "standard": "^16.0.3",
     "vscode": "^1.1.21"
   },
   "dependencies": {}
