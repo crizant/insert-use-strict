@@ -1,16 +1,18 @@
 'use strict'
 
-const { commands } = require('vscode')
-const insertUseStrict = require('./main')
+const { commands, workspace } = require('vscode')
+const { applyToWorkspace, applyToNewFiles } = require('./main')
 
 // function called when the extension is activated
 exports.activate = context => {
-  const disposable = commands.registerCommand(
+  const command = commands.registerCommand(
     'extension.insertUseStrict',
-    insertUseStrict
+    applyToWorkspace
   )
 
-  context.subscriptions.push(disposable)
+  const fileCreateHandler = workspace.onDidCreateFiles(applyToNewFiles)
+
+  context.subscriptions.push([command, fileCreateHandler])
 }
 
 // function called when the extension is deactivated
