@@ -27,6 +27,7 @@
     "use strict",
     "strict mode"
   ],
+  "activationEvents": [],
   "main": "./extension",
   "contributes": {
     "commands": [
