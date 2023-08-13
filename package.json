@@ -27,9 +27,6 @@
     "use strict",
     "strict mode"
   ],
-  "activationEvents": [
-    "onCommand:extension.insertUseStrict"
-  ],
   "main": "./extension",
   "contributes": {
     "commands": [
@@ -56,6 +53,11 @@
           "type": "boolean",
           "default": true,
           "description": "If set to true, save the documents after editing."
+        },
+        "insertUseStrict.globPattern": {
+          "type": "string",
+          "default": "**/*.{js,ts}",
+          "description": "The glob pattern of files to apply changes."
         }
       }
     }

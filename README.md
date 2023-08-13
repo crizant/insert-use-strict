@@ -26,6 +26,7 @@ This extension contributes the following settings:
 - `insertUseStrict.useDoubleQuote`: Use single/double quote. (default: `false`)
 - `insertUseStrict.addTrailingSemicolon`: Add semicolon at the end of the statement. (default: `false`)
 - `insertUseStrict.autoSave`: Save the documents automatically after editing (default: `true`)
+- `insertUseStrict.globPattern`: The glob pattern of files to apply changes. (default: `**/*.{js,ts}`)
 
 ## Release Notes
 
