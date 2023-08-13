@@ -2,7 +2,7 @@
   "name": "insert-use-strict",
   "displayName": "Insert use strict",
   "description": "Insert \"use strict\" to all JavaScript files accross your workspace.",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "publisher": "crizant",
   "license": "MIT",
   "homepage": "https://github.com/crizant/insert-use-strict",

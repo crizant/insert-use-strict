@@ -31,13 +31,18 @@ This extension contributes the following settings:
 
 ## Release Notes
 
+### 1.1.0
+
+- Add `globPattern` config
+- Add `autoApplyToNewFiles` config
+
 ### 1.0.2
 
-Add logo
+- Add logo
 
 ### 1.0.0
 
-Initial Release
+- Initial Release
 
 ---
 
