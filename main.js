@@ -5,9 +5,8 @@ const { window, workspace, Position, WorkspaceEdit } = require('vscode')
 const { EOL } = require('os')
 const { pattern } = require('./constants')
 
-const config = workspace.getConfiguration('insertUseStrict')
-
 const getUseStrictStatement = () => {
+  const config = workspace.getConfiguration('insertUseStrict')
   const QUOTE = config.useDoubleQuote ? '"' : "'"
   const TAIL = config.addTrailingSemicolon ? ';' : ''
 
@@ -21,6 +20,7 @@ const needToInsert = async file => {
 }
 
 const applyToWorkspace = async () => {
+  const config = workspace.getConfiguration('insertUseStrict')
   const files = await workspace.findFiles(
     config.globPattern,
     '**/node_modules/**'
@@ -56,6 +56,7 @@ const applyToWorkspace = async () => {
 }
 
 const applyToNewFiles = async event => {
+  const config = workspace.getConfiguration('insertUseStrict')
   if (config.autoApplyToNewFiles) {
     const USE_STRICT_STATEMENT = getUseStrictStatement()
     const startPosition = new Position(0, 0)
