@@ -2,7 +2,7 @@
   "name": "insert-use-strict",
   "displayName": "Insert use strict",
   "description": "Insert \"use strict\" to all JavaScript files accross your workspace.",
-  "version": "1.1.4",
+  "version": "1.1.6",
   "publisher": "crizant",
   "license": "MIT",
   "homepage": "https://github.com/crizant/insert-use-strict",
@@ -71,33 +71,8 @@
       }
     }
   },
-  "scripts": {
-    "commitmsg": "commitlint -e $GIT_PARAMS",
-    "precommit": "lint-staged"
-  },
-  "lint-staged": {
-    "linters": {
-      "**/*.{js,json,md}": [
-        "prettier-standard",
-        "git add"
-      ]
-    }
-  },
-  "standard": {
-    "env": [
-      "jest"
-    ],
-    "parser": "babel-eslint"
-  },
   "devDependencies": {
-    "@commitlint/cli": "^7.0.0",
-    "@commitlint/config-conventional": "^7.0.1",
-    "@types/vscode": "^1.81.0",
-    "babel-eslint": "^8.2.6",
-    "husky": "^0.14.3",
-    "lint-staged": "^7.2.2",
-    "prettier-standard": "^16.4.1",
-    "standard": "^16.0.3"
+    "@types/vscode": "^1.81.0"
   },
   "dependencies": {
     "minimatch": "^9.0.3"

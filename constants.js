@@ -1,5 +1,5 @@
-'use strict'
+"use strict";
 
 module.exports = {
-  pattern: /^['"]use strict['"];?$/m
-}
+  pattern: /^['"]use strict['"];?$/m,
+};
