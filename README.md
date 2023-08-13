@@ -1,6 +1,6 @@
 # Insert use strict
 
-This is a VS Code extension which inserts `'use strict'` statement to all JavaScript files (`*.js`, `*.ts`, `*.jsx`) across your workspace.
+This is a VS Code extension which inserts `'use strict'` statement to all JavaScript files (`*.js`, `*.ts`) across your workspace.
 
 ![Show case](images/showcase.gif)
 
