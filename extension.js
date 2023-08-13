@@ -12,7 +12,7 @@ exports.activate = context => {
 
   const fileCreateHandler = workspace.onDidCreateFiles(applyToNewFiles)
 
-  context.subscriptions.push([command, fileCreateHandler])
+  context.subscriptions.push(command, fileCreateHandler)
 }
 
 // function called when the extension is deactivated
