@@ -58,6 +58,11 @@
           "type": "string",
           "default": "**/*.{js,ts}",
           "description": "The glob pattern of files to apply changes."
+        },
+        "insertUseStrict.autoApplyToNewFiles": {
+          "type": "boolean",
+          "default": true,
+          "description": "If set to true, apply changes when new files are created."
         }
       }
     }
@@ -91,5 +96,7 @@
     "standard": "^16.0.3",
     "vscode": "^1.1.21"
   },
-  "dependencies": {}
+  "dependencies": {
+    "minimatch": "^9.0.3"
+  }
 }

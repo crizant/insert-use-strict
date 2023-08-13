@@ -1,7 +1,7 @@
 'use strict'
 
-const { commands } = require('vscode')
-const { applyToWorkspace } = require('./main')
+const { commands, workspace } = require('vscode')
+const { applyToWorkspace, applyToNewFiles } = require('./main')
 
 // function called when the extension is activated
 exports.activate = context => {
@@ -10,7 +10,9 @@ exports.activate = context => {
     applyToWorkspace
   )
 
-  context.subscriptions.push(command)
+  const fileCreateHandler = workspace.onDidCreateFiles(applyToNewFiles)
+
+  context.subscriptions.push([command, fileCreateHandler])
 }
 
 // function called when the extension is deactivated

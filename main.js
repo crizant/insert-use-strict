@@ -1,5 +1,6 @@
 'use strict'
 
+const { minimatch } = require('minimatch')
 const { window, workspace, Position, WorkspaceEdit } = require('vscode')
 const { EOL } = require('os')
 const { pattern } = require('./constants')
@@ -54,11 +55,43 @@ const applyToWorkspace = async () => {
   window.showInformationMessage(`Done. ${workSpaceEdit.size} file(s) updated.`)
 }
 
+const applyToNewFiles = async event => {
+  if (config.autoApplyToNewFiles) {
+    const USE_STRICT_STATEMENT = getUseStrictStatement()
+    const startPosition = new Position(0, 0)
+    const workSpaceEdit = new WorkspaceEdit()
+    const files = event.files.filter(file =>
+      minimatch(file.path, config.globPattern)
+    )
+
+    await Promise.all(
+      files.map(async file => {
+        if (await needToInsert(file)) {
+          workSpaceEdit.insert(
+            file,
+            startPosition,
+            `${USE_STRICT_STATEMENT}${EOL}${EOL}`
+          )
+        }
+      })
+    )
+
+    await workspace.applyEdit(workSpaceEdit)
+
+    if (config.autoSave) {
+      await workspace.saveAll()
+    }
+
+    window.showInformationMessage(`${workSpaceEdit.size} new file(s) updated.`)
+  }
+}
+
 module.exports = {
   applyToWorkspace: () => {
     window.setStatusBarMessage(
       'Inserting "use strict" to workspace...',
       applyToWorkspace()
     )
-  }
+  },
+  applyToNewFiles
 }
